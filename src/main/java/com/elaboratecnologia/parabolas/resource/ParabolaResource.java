@@ -18,7 +18,7 @@ public class ParabolaResource {
 
     ParabolaRepository parabolaRepository;
 
-    @PostMapping("/parabola")
+    @PostMapping("/parabolas")
     @ResponseStatus(HttpStatus.CREATED)
     public Parabola save(@RequestBody Parabola parabola) {
         return parabolaRepository.save(parabola);
@@ -30,18 +30,18 @@ public class ParabolaResource {
         return parabolaRepository.findAll();
     }
 
-    @PutMapping("/parabola")
+    @PutMapping("/parabolas")
     public Parabola update(@RequestBody Parabola parabola) {
         return parabolaRepository.saveAndFlush(parabola);
     }
 
-    @GetMapping("/parabola/{id}")
+    @GetMapping("/parabolas/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Optional<Parabola> findById(@PathVariable Long id) {
         return parabolaRepository.findById(id);
     }
 
-    @DeleteMapping("/parabola/{id}")
+    @DeleteMapping("/parabolas/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
         parabolaRepository.deleteById(id);
